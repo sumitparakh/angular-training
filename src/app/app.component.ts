@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-project',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

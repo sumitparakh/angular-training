@@ -317,6 +317,11 @@
 
 <div class="content" role="main">
 
+  <button (click)="showProfile = !showProfile">Toggle Profile</button>
+<br />
+
+  <app-profile *ngIf="showProfile"></app-profile>
+
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
 

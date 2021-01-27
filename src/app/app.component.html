@@ -335,7 +335,10 @@
   <button (click)="showProfile = !showProfile">Toggle Profile</button>
   <br />
 
+  <app-cloud-services></app-cloud-services>
+
   <app-profile *ngIf="showProfile"></app-profile>
+  <app-accounts></app-accounts>
 
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">

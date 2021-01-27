@@ -6,6 +6,7 @@ import {
   AfterContentInit,
   ViewEncapsulation,
 } from '@angular/core';
+import { LogService } from '../core/log.service';
 
 @Component({
   selector: 'app-profile',
@@ -19,7 +20,7 @@ export class ProfileComponent
   profileName = 'Sumit Parakh';
   intervalRef: any;
 
-  constructor() {
+  constructor(private log: LogService) {
     console.log('Profile::constructor');
   }
 
@@ -31,7 +32,7 @@ export class ProfileComponent
     this.intervalRef = setInterval(() => {
       this.profileHash = (Math.random() * 100).toFixed(4);
     }, 1000);
-    console.log('Profile::ngOnInit');
+    this.log.info('Profile::ngOnInit');
   }
 
   ngOnDestroy() {

@@ -3,18 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProfileComponent } from './profile/profile.component';
 import { Profile2Component } from './profile2/profile2.component';
+import { ChangeThemeComponent } from './change-theme/change-theme.component';
+import { ProfileModule } from './profile/profile.module';
+import { CloudServicesComponent } from './components/cloud/cloud-services/cloud-services.component';
+import { MobileAppsComponent } from './components/mobile/mobile-apps/mobile-apps.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent,
-    Profile2Component
+    Profile2Component,
+    ChangeThemeComponent,
+    CloudServicesComponent,
+    MobileAppsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ProfileModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

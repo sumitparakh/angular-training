@@ -9,6 +9,7 @@ export class CloudService {
   constructor(private http: HttpRequestService, private log: LogService) {}
 
   getCloudData() {
+    // this.http.request()
     return { data: 'My cloud data' };
   }
 }

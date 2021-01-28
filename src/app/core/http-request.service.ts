@@ -10,21 +10,19 @@ interface IStudent {
   providedIn: 'root'
 })
 export class HttpRequestService {
-
   constructor(private http: HttpClient) {
     console.log('HttpService');
   }
 
-  get() {
-
-  }
+  get(): void;
+  get(name: string): void;
+  get() {}
 
   post(url: string, params: any) {
     return this.http.post(url, params);
   }
 
   delete() {
-    this.http.delete('')
+    this.http.delete('');
   }
-
 }

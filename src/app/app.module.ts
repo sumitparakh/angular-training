@@ -9,6 +9,11 @@ import { ProfileModule } from './profile/profile.module';
 import { CloudServicesComponent } from './components/cloud/cloud-services/cloud-services.component';
 import { MobileAppsComponent } from './components/mobile/mobile-apps/mobile-apps.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DirectivesComponent } from './components/directives/directives.component';
+import { NgDataDirective } from './core/directives/ng-data.directive';
+import { PipesComponent } from './components/pipes/pipes.component';
+import { FirstNamePipe } from './core/pipes/first-name.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,13 +21,18 @@ import { HttpClientModule } from '@angular/common/http';
     Profile2Component,
     ChangeThemeComponent,
     CloudServicesComponent,
-    MobileAppsComponent
+    MobileAppsComponent,
+    DirectivesComponent,
+    NgDataDirective,
+    PipesComponent,
+    FirstNamePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ProfileModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

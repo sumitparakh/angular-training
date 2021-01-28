@@ -1,0 +1,49 @@
+{{ contentStyle | json }}
+<br />
+<input
+  type="checkbox"
+  name=""
+  id=""
+  #red
+  (change)="contentStyle.red = red.checked"
+/>
+Red
+<input
+  type="checkbox"
+  name=""
+  id=""
+  #green
+  (change)="contentStyle.green = green.checked"
+/>
+Green
+
+<div [ngClass]="contentStyle">Hello World</div>
+
+<button (click)="redElemClass = 'red'">Update Red Element</button>
+
+<!-- Better -->
+<div [class]="redElemClass">Red element</div>
+
+<!--
+  Than this
+  {{ => interpolation operator
+  -->
+<div class="{{ redElemClass }}">Red element 2</div>
+
+<br />
+<br />
+
+{{ dataJson | json }} <br />
+<button (click)="changeAttribute()">Change Attribute Data</button>
+
+<h1 [ngData]="dataJson">Attribute Field</h1>
+
+<!-- We can create -->
+
+<input type="checkbox" (change)="toggle = !toggle" />Show/Hide
+
+<!-- Structural directives -->
+
+<h2 *ngIf="toggle">Show/Hide this element</h2>
+
+<div *ngFor="let name of names" [id]="name.id">{{ name.name }}</div>

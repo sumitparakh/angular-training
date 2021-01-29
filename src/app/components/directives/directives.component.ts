@@ -34,6 +34,9 @@ export class DirectivesComponent implements OnInit {
   ngOnInit(): void {}
 
   changeAttribute() {
-    delete this.dataJson.id;
+    this.dataJson = {
+      name: this.dataJson.name
+    };
+    // delete this.dataJson.id;
   }
 }

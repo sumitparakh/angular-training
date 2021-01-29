@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { IJson } from './types';
 
 interface IStudent {
   name: string;
@@ -7,16 +9,16 @@ interface IStudent {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HttpRequestService {
   constructor(private http: HttpClient) {
     console.log('HttpService');
   }
 
-  get(): void;
-  get(name: string): void;
-  get() {}
+  get(url: string): Observable<IJson> {
+    return this.http.get<IJson>(url);
+  }
 
   post(url: string, params: any) {
     return this.http.post(url, params);

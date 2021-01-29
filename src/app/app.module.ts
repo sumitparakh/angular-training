@@ -14,6 +14,7 @@ import { NgDataDirective } from './core/directives/ng-data.directive';
 import { PipesComponent } from './components/pipes/pipes.component';
 import { FirstNamePipe } from './core/pipes/first-name.pipe';
 import { FormsModule } from '@angular/forms';
+import { DataBindingComponent } from './components/data-binding/data-binding.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     DirectivesComponent,
     NgDataDirective,
     PipesComponent,
-    FirstNamePipe
+    FirstNamePipe,
+    DataBindingComponent
   ],
   imports: [
     BrowserModule,

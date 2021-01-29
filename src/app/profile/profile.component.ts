@@ -6,13 +6,14 @@ import {
   AfterContentInit,
   ViewEncapsulation,
 } from '@angular/core';
+import { CommService } from '../core/data-binding/comm.service';
 import { LogService } from '../core/log.service';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss', './profile2.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProfileComponent
   implements OnInit, OnDestroy, AfterViewInit, AfterContentInit {
@@ -20,9 +21,29 @@ export class ProfileComponent
   profileName = 'Sumit Parakh';
   intervalRef: any;
 
-  constructor(private log: LogService) {
+  githubData: any;
+
+  constructor(private log: LogService, private commService: CommService) {
     console.log('Profile::constructor');
+    /**
+     * DO NOT FORGET to unsubscribe subscription.
+     */
+    this.commService.nameActivity$.subscribe(
+      (response) => {
+        console.log('Profile::Subscription called: ', response);
+      },
+      (error) => {
+        console.error({ error });
+      }
+    );
+
+    this.commService.FetchedGithubData$.subscribe((githubData) => {
+      this.githubData = githubData;
+      console.log('Fetched github data: ', { githubData });
+    });
   }
+
+  getGithubData() {}
 
   ngAfterContentInit() {}
 

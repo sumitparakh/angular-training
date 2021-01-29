@@ -20,6 +20,9 @@
   <app-profile *ngIf="showProfile"></app-profile>
   <app-accounts></app-accounts>
 
+  <input type="text"  [(ngModel)]="name" />
+  <app-data-binding [name]="name" ></app-data-binding>
+
 </div>
 
 <router-outlet></router-outlet>

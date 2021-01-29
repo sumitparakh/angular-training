@@ -13,8 +13,9 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import { NgDataDirective } from './core/directives/ng-data.directive';
 import { PipesComponent } from './components/pipes/pipes.component';
 import { FirstNamePipe } from './core/pipes/first-name.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
+import { FormHandlingComponent } from './components/form-handling/form-handling.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +28,16 @@ import { DataBindingComponent } from './components/data-binding/data-binding.com
     NgDataDirective,
     PipesComponent,
     FirstNamePipe,
-    DataBindingComponent
+    DataBindingComponent,
+    FormHandlingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ProfileModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,31 @@
+<!-- Template Form -->
+<form (ngSubmit)="onSubmit()">
+  <input type="text" [(ngModel)]="profile.firstName" name="firstName" />
+  <input type="text" [(ngModel)]="profile.lastName" name="lastName" />
+  <input type="text" [(ngModel)]="profile.contact" name="contact" />
+
+  <button type="submit">Submit</button>
+</form>
+
+<!-- Reactive Form -->
+
+Valid: {{ profileForm.valid }}
+
+Contact Errors:
+{{profileForm.controls.contact.errors | json}}
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit2()">
+  <input type="text" formControlName="firstName" name="firstName" />
+  <span *ngIf="profileForm.controls.firstName.errors && profileForm.controls.firstName.errors.required"
+    >First Name is required!</span
+  >
+  <input type="text" formControlName="lastName" name="lastName" />
+  <span *ngIf="profileForm.controls.lastName.errors && profileForm.controls.lastName.errors.required"
+    >Last Name is required!</span
+  >
+  <input type="text" formControlName="contact" name="contact" />
+  <span *ngIf="profileForm.controls.contact.errors && profileForm.controls.contact.errors.required"
+    >Contact is required!</span
+  >
+  <button type="submit">Submit</button>
+</form>

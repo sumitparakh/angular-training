@@ -16,6 +16,10 @@ import { FirstNamePipe } from './core/pipes/first-name.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { FormHandlingComponent } from './components/form-handling/form-handling.component';
+import { HomeComponent } from './home/home.component';
+import { ChangeDetectionComponent } from './change-detection/change-detection.component';
+import { DefaultChangeDetectionComponent } from './default-change-detection/default-change-detection.component';
+import { ChildCdComponent } from './change-detection/child/child.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { FormHandlingComponent } from './components/form-handling/form-handling.
     PipesComponent,
     FirstNamePipe,
     DataBindingComponent,
-    FormHandlingComponent
+    FormHandlingComponent,
+    HomeComponent,
+    ChangeDetectionComponent,
+    DefaultChangeDetectionComponent,
+    ChildCdComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,31 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+
+<div class="content" role="main">
+  <button (click)="showProfile = !showProfile">Toggle Profile</button>
+  <br />
+
+  <app-pipes></app-pipes>
+  <app-directives></app-directives>
+  <app-cloud-services></app-cloud-services>
+
+  <app-profile *ngIf="showProfile"></app-profile>
+  <app-accounts></app-accounts>
+
+  <input type="text"  [(ngModel)]="name" />
+  <app-data-binding [name]="name" ></app-data-binding>
+
+  <app-form-handling></app-form-handling>
+
+
+</div>
+
+<router-outlet></router-outlet>

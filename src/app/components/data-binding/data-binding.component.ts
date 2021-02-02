@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CommService } from 'src/app/core/data-binding/comm.service';
+import { CommService } from '../../core/data-binding/comm.service';
 
 @Component({
   selector: 'app-data-binding',

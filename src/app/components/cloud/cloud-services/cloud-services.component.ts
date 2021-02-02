@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CloudService } from 'src/app/core/cloud/cloud.service';
+import { CloudService } from '../../../core/cloud/cloud.service';
 
 @Component({
   selector: 'app-cloud-services',

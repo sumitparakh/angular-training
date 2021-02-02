@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Routing } from './routing';
 
 interface IMenu {
-  label: string;
+  label?: string;
   path: string;
 }
 

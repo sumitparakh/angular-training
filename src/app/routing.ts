@@ -9,8 +9,8 @@ type IComponent =
   | typeof DefaultChangeDetectionComponent
   | typeof ChangeDetectionComponent;
 
-interface IRouting {
-  label: string;
+export interface IRouting {
+  label?: string;
   path: string;
   component?: IComponent;
   loadChildren?(): Promise<typeof LazyRoutingModule>;

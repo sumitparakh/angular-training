@@ -15,7 +15,7 @@ import { HttpRequestService } from '../core/http-request.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  title = 'Apigee Edge';
+  title = 'Test';
   showProfile = true;
 
   name = 'Sumit';

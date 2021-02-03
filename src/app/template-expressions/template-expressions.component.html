@@ -1,0 +1,14 @@
+<p>template-expressions works!</p>
+
+<!--
+  NG0303: Can't bind to 'ngForOf' since it isn't a known property of 'li'.
+ -->
+<ol>
+  <li *ngFor="let number of numbers">
+    <label for=""
+      ><strong>{{ number }}</strong
+      >:
+      <span>{{ number | squareRoot }}</span>
+    </label>
+  </li>
+</ol>

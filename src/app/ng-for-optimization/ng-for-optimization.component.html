@@ -1,0 +1,7 @@
+<p>ng-for-optimization works!</p>
+
+<ul>
+  <li *ngFor="let item of data; trackBy: trackById">{{ item.name }}</li>
+</ul>
+
+<button (click)="update2ndStudent()">Update 2nd Student</button>

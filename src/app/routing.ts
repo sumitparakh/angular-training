@@ -39,4 +39,20 @@ export const Routing: IRouting[] = [
       ),
     path: 'lazy-loading',
   },
+  {
+    label: 'Template Expressions',
+    loadChildren: () =>
+      import('./template-expressions/template-expressions.module').then(
+        (m) => m.TemplateExpressionsModule
+      ),
+    path: 'template-expressions',
+  },
+  {
+    label: 'Ng For Optimization',
+    loadChildren: () =>
+      import('./ng-for-optimization/ng-for-optimization.module').then(
+        (m) => m.NgForOptimizationModule
+      ),
+    path: 'ng-for-optimization',
+  },
 ];

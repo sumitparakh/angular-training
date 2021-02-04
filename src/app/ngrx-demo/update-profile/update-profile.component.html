@@ -1,0 +1,6 @@
+<button (click)="updateProfile()">Update Profile</button>
+<div *ngIf="profile$ | async as state">
+  <strong>First Name</strong>: {{ state.profile.firstName }},
+  <strong>Last Name</strong>:
+  {{ state.profile.lastName }}
+</div>

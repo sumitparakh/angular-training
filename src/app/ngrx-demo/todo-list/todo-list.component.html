@@ -1,0 +1,7 @@
+<button (click)="fetchData()">Fetch</button>
+
+<ul *ngIf="taskList$">
+  <li *ngFor="let item of (taskList$ | async)?.tasks || []">
+    {{ item }}
+  </li>
+</ul>

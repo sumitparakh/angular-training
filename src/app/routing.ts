@@ -55,4 +55,10 @@ export const Routing: IRouting[] = [
       ),
     path: 'ng-for-optimization',
   },
+  {
+    label: 'NgRx Demo',
+    loadChildren: () =>
+      import('./ngrx-demo/ngrx-demo.module').then((m) => m.NgrxDemoModule),
+    path: 'ngrx-demo',
+  },
 ];

@@ -7,6 +7,9 @@ import { Action, ActionReducer, Store, StoreModule } from '@ngrx/store';
 import { IState, todoReducer } from './ngrx-reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { FormsModule } from '@angular/forms';
+import { AuthModule } from './auth/auth.module';
+import { ProfileModule } from './update-profile/profile.module';
 // import {} from ''
 
 @NgModule({
@@ -22,9 +25,12 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     ]),
 
     StoreModule.forRoot<ActionReducer<ActionReducer<IState, Action>, Action>>({
-      todo: todoReducer,
+      // todo: todoReducer,
     }), // Just like createStore(<reducer>)
-    StoreDevtoolsModule,
+    StoreDevtoolsModule.instrument(),
+    FormsModule,
+    AuthModule,
+    ProfileModule
   ],
 })
 export class NgrxDemoModule {}

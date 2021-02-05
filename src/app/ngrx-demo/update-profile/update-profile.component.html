@@ -1,6 +1,10 @@
-<button (click)="updateProfile()">Update Profile</button>
+<form>
+  <input type="text" name="firstName" [(ngModel)]="profile.firstName" />
+  <input type="text" name="lastName" [(ngModel)]="profile.lastName" />
+  <button type="button" (click)="updateProfile()">Update Profile</button>
+</form>
 <div *ngIf="profile$ | async as state">
-  <strong>First Name</strong>: {{ state.profile.firstName }},
+  <strong>First Name</strong>: {{ state.firstName }},
   <strong>Last Name</strong>:
-  {{ state.profile.lastName }}
+  {{ state.lastName }}
 </div>

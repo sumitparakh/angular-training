@@ -10,15 +10,3 @@ export const fetchData = (state: IState) => {
 };
 export const addTask = (state: any) => state;
 export const removeTask = (state: any) => state;
-
-export const updateUserProfile = (state: IState) => {
-  console.log({ updateUserProfile: state });
-
-  state = {
-    ...state,
-    profile: {
-      firstName: 'Mahesh',
-    },
-  };
-  return state;
-};

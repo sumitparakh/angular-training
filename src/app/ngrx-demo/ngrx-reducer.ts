@@ -1,7 +1,7 @@
 import { Action, ActionReducer, createReducer, on } from '@ngrx/store';
 import { IJson } from '../core/types';
-import { add, fetch, remove, updateProfile } from './ngrx-actions';
-import { addTask, fetchData, removeTask, updateUserProfile } from './ngrx-state.update';
+import { add, fetch, remove } from './ngrx-actions';
+import { addTask, fetchData, removeTask } from './ngrx-state.update';
 
 export interface IState {
   tasks: any[];
@@ -20,8 +20,7 @@ const appReducer = createReducer(
   initialState,
   on(fetch, fetchData),
   on(add, addTask),
-  on(remove, removeTask),
-  on(updateProfile, updateUserProfile)
+  on(remove, removeTask)
 );
 
 /**
@@ -32,5 +31,6 @@ export function todoReducer(
   state: IState,
   action: Action
 ): ActionReducer<IState, Action> {
+  console.log('Reducer Called:', { state, action });
   return appReducer(state, action);
 }

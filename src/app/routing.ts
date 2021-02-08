@@ -61,4 +61,12 @@ export const Routing: IRouting[] = [
       import('./ngrx-demo/ngrx-demo.module').then((m) => m.NgrxDemoModule),
     path: 'ngrx-demo',
   },
+  {
+    label: 'Advance Forms',
+    loadChildren: () =>
+      import('./advance-forms-2/advance-forms-2.module').then(
+        (m) => m.AdvanceForms2Module
+      ),
+    path: 'advance-forms',
+  },
 ];

@@ -1,0 +1,48 @@
+<div>
+  <h2>Add Employee Records</h2>
+  <button (click)="addEmployeeForm()">Add Employee</button>
+</div>
+
+<pre
+  >{{ employeeForms.value | json }}
+</pre>
+<br />
+
+<div *ngFor="let empFormGroup of employeeGroups">
+  Form Validation Errors:
+  <pre>
+  {{ empFormGroup.controls.firstName.errors | json }}
+  {{ empFormGroup.controls.lastName.errors | json }}
+</pre
+  >
+  <br />
+
+  <form [formGroup]="empFormGroup">
+    <div class="form-group">
+      <label>First Name: </label>
+      <input type="text" name="firstName" formControlName="firstName" />
+      <p
+        class="error"
+        *ngFor="let item of  firstNameControl(empFormGroup).errors | keyvalue"
+      >
+        {{ errors[item.key] }}
+      </p>
+    </div>
+    <div class="form-group">
+      <label>Last Name: </label>
+      <input type="text" name="lastName" formControlName="lastName" />
+      <p
+        class="error"
+        *ngFor="let item of empFormGroup.controls.lastName.errors | keyvalue"
+      >
+        {{ errors[item.key] }}
+      </p>
+    </div>
+    <div class="form-group">
+      <label>Contact: </label>
+      <input type="text" name="contact" formControlName="contact" />
+    </div>
+  </form>
+  <br />
+</div>
+<button>Save Employees</button>

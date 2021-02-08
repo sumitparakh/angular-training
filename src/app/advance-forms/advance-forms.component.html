@@ -1,0 +1,45 @@
+<div>
+  Add Employees
+  <button (click)="addEmployeeForm()">+</button>
+</div>
+<br />
+
+<div *ngFor="let empFormGroup of formGroups; let i = index">
+  <form [formGroup]="empFormGroup">
+    <div class="form-group">
+      <label [for]="'firstName' + i">First Name: </label>
+      <input
+        formControlName="firstName"
+        type="text"
+        placeholder="First Name"
+        name="firstName"
+        [id]="'firstName' + i"
+      />
+      {{empFormGroup.controls.firstName.errors | json}}
+    </div>
+    <div class="form-group">
+      <label [for]="'lastName' + i">Last Name: </label>
+      <input
+        formControlName="lastName"
+        type="text"
+        placeholder="Last Name"
+        name="lastName"
+        [id]="'lastName' + i"
+      />
+      {{empFormGroup.controls.lastName.errors | json}}
+    </div>
+    <div class="form-group">
+      <label [for]="'contact' + i">Contact: </label>
+      <input
+        formControlName="contact"
+        type="text"
+        placeholder="Contact"
+        name="contact"
+        [id]="'contact' + i"
+      />
+    </div>
+  </form>
+  <div class="form-group">
+    <button>Save</button>
+  </div>
+</div>

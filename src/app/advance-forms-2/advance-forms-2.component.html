@@ -1,8 +1,10 @@
+<button (click)="id='helloworld'">Change ID</button>
 <div>
   <h2>Add Employee Records</h2>
   <button (click)="addEmployeeForm()">Add Employee</button>
 </div>
 
+<h2>IsValid: {{employeeForms.valid}}</h2>
 <pre
   >{{ employeeForms.value | json }}
 </pre>

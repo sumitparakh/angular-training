@@ -69,4 +69,12 @@ export const Routing: IRouting[] = [
       ),
     path: 'advance-forms',
   },
+  {
+    label: 'Decorator Demos',
+    loadChildren: () =>
+      import('./decorator-comps/decorator-comps.module').then(
+        (m) => m.DecoratorCompsModule
+      ),
+    path: 'decorator-demos',
+  }
 ];

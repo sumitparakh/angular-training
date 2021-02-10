@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  ViewChild,
+  HostBinding,
+} from '@angular/core';
 import {
   AbstractControl,
   FormArray,
@@ -7,7 +13,6 @@ import {
 } from '@angular/forms';
 import { invalidName } from '../core/validators/invalid-name.validator';
 import { validateNameFirstLetter } from '../core/validators/name-first-letter.validator';
-
 
 /**
  * 1) Multiple Forms => Array of form groups => FormArray
@@ -24,7 +29,17 @@ import { validateNameFirstLetter } from '../core/validators/name-first-letter.va
 export class AdvanceForms2Component implements OnInit {
   // FormGroup, FormControl
 
-  errors = {
+  @HostBinding('id')
+  id = 'hostid';
+
+  @HostBinding('class.invalid')
+  get isFormInvalid(): boolean {
+    return this.employeeForms.invalid;
+  }
+
+  classStyle = 'host-class';
+
+  errors: any = {
     firstLetterCapital: 'First letter should be capital',
     invalidName: 'Invalid first name',
   };
